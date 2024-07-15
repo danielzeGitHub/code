@@ -135,7 +135,10 @@ class Signals_plot(QtWidgets.QWidget):
             else:
                 y = self.ADCs[i].history
             self.plots[i].setData(self.x, y)
+            # Update DIs
         for i, new_DI in enumerate(new_DIs):
+            if i == 1:  # Invert the value for digital input #2
+                new_DI = 1 - new_DI
             self.DIs[i].update(new_DI)
             self.DI_shaders[i].update()
         self.event_triggered_plot.update(len(new_ADCs[0]))
