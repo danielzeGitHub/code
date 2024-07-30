@@ -20,8 +20,8 @@ max_sampling_rate = {  # Maximum sampling rate in continuous and time division a
 }
 
 max_LED_current = {  # Maximum LED current in continuous and time division acquisition modes (mA).
-    "continuous": 100,
-    "pulsed": 100,
+    "continuous": 200,
+    "pulsed": 300,
 }
 
 oversampling_rate = {"continuous": 3e5, "pulsed": 256e3}  # Rate at which ADC samples are aquired for oversampling.
