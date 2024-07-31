@@ -663,6 +663,8 @@ class Setupbox(QtWidgets.QFrame):
         if data:  # Update plots.
             new_ADCs, new_DIs = data
             self.signals_plot.update(new_ADCs, new_DIs)
+            if any(item !=0 for item in new_DIs): 
+                self.board.stop()
 
     def update_setups(self, setup_labels):
         """Update available ports in port_select combobox."""
