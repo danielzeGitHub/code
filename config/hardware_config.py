@@ -8,7 +8,7 @@ pins = {
 }  # Pyboard Pins used for analog and digital signals.
 
 LED_calibration = {
-    "slope": 38.15,
+    "slope": 9.78,
     "offset": 6.26,
 }  # Calibration of DAC values against LED currents: DAC_value = offset + slope * LED_current_mA.
 
