@@ -34,6 +34,6 @@ function data_struct = import_ppd(file_path)
 	data_struct.analog_2 = analog(2:2:end) * data_struct.volts_per_division(2);
 	data_struct.digital_1 = digital(1:2:end);
 	data_struct.digital_2 = digital(2:2:end);
-	data_struct.time = (0:length(data_struct.analog_1)-1)*1000/data_struct.sampling_rate % Time relative to start of recording (ms).
+	data_struct.time = (0:length(data_struct.analog_1)-1)*1000/data_struct.sampling_rate; % Time relative to start of recording (ms).
 
 end

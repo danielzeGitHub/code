@@ -66,19 +66,21 @@ def import_ppd(file_path, low_pass=20, high_pass=0.01):
     digital_1 = digital[::n_analog_signals]
     digital_2 = digital[1::n_analog_signals] if n_digital_signals == 2 else None
     time = np.arange(analog_1.shape[0]) * 1000 / sampling_rate  # Time relative to start of recording (ms).
-    # Filter signals with specified high and low pass frequencies (Hz).
-    if low_pass and high_pass:
-        b, a = butter(2, np.array([high_pass, low_pass]) / (0.5 * sampling_rate), "bandpass")
-    elif low_pass:
-        b, a = butter(2, low_pass / (0.5 * sampling_rate), "low")
-    elif high_pass:
-        b, a = butter(2, high_pass / (0.5 * sampling_rate), "high")
-    if low_pass or high_pass:
-        analog_1_filt = filtfilt(b, a, analog_1)
-        analog_2_filt = filtfilt(b, a, analog_2)
-        analog_3_filt = filtfilt(b, a, analog_3) if n_analog_signals == 3 else None
-    else:
-        analog_1_filt = analog_2_filt = analog_3_filt = None
+
+    # # Filter signals with specified high and low pass frequencies (Hz).
+    # if low_pass and high_pass:
+    #     b, a = butter(2, np.array([high_pass, low_pass]) / (0.5 * sampling_rate), "bandpass")
+    # elif low_pass:
+    #     b, a = butter(2, low_pass / (0.5 * sampling_rate), "low")
+    # elif high_pass:
+    #     b, a = butter(2, high_pass / (0.5 * sampling_rate), "high")
+    # if low_pass or high_pass:
+    #     analog_1_filt = filtfilt(b, a, analog_1)
+    #     analog_2_filt = filtfilt(b, a, analog_2)
+    #     analog_3_filt = filtfilt(b, a, analog_3) if n_analog_signals == 3 else None
+    # else:
+    #     analog_1_filt = analog_2_filt = analog_3_filt = None
+
     # Extract rising edges for digital inputs.
     pulse_inds_1 = 1 + np.where(np.diff(digital_1) == 1)[0]
     pulse_inds_2 = 1 + np.where(np.diff(digital_2) == 1)[0] if n_digital_signals == 2 else None
@@ -89,8 +91,8 @@ def import_ppd(file_path, low_pass=20, high_pass=0.01):
         "filename": os.path.basename(file_path),
         "analog_1": analog_1,
         "analog_2": analog_2,
-        "analog_1_filt": analog_1_filt,
-        "analog_2_filt": analog_2_filt,
+        # "analog_1_filt": analog_1_filt,
+        # "analog_2_filt": analog_2_filt,
         "digital_1": digital_1,
         "digital_2": digital_2,
         "pulse_inds_1": pulse_inds_1,
