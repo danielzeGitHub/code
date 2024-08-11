@@ -1,0 +1,29 @@
+astropy==5.2.2
+contourpy==1.1.1
+cycler==0.12.1
+fonttools==4.53.1
+greenlet==3.0.3
+importlib_resources==6.4.0
+kiwisolver==1.4.5
+matplotlib==3.7.5
+numpy==1.24.4
+packaging @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_af6w2d9k11/croot/packaging_1720101860461/work
+pillow==10.4.0
+ply==3.11
+pyerfa==2.0.0.3
+pyparsing==3.1.2
+PyPhotometry==0.0.7
+PyQt5-sip @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_1dtf8v1nd0/croot/pyqt-split_1698769097015/work/pyqt_sip
+PyQt6==6.7.1
+PyQt6-Qt6==6.7.2
+PyQt6_sip==13.8.0
+pyqtgraph==0.13.3
+pyserial==3.5
+python-dateutil==2.9.0.post0
+PyYAML==6.0.2
+sip @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_6cor4uzugx/croot/sip_1698675942509/work
+six==1.16.0
+SQLAlchemy==2.0.32
+tomli @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_90762ba4-f339-47e8-bd29-416854a59b233d27hku_/croots/recipe/tomli_1657175507767/work
+typing_extensions==4.12.2
+zipp==3.19.2
